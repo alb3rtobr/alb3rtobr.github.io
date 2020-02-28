@@ -387,6 +387,7 @@ $tab-count: {{ site.data.tabs | size }};
     margin: 0 1rem 1rem 0;
     &::before {
       content: "#";
+      color: var(--text-muted-color);
       padding-right: .2rem;
     }
   }
@@ -538,7 +539,7 @@ footer {
   transition: top 0.2s ease-in-out;
   margin-right: 1.5rem;
   margin-top: 3rem;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
   color: #6c757d;
   &:only-child {
     position: -webkit-sticky; /* Safari */
@@ -550,8 +551,8 @@ footer {
   >div {
     padding-left: 1rem;
     border-left: 1px solid var(--main-border-color);
-    &:not(:first-child) {
-      margin-top: 4rem;
+    &:not(:last-child) {
+      margin-bottom: 4rem;
     }
   }
   h3 {
@@ -648,7 +649,6 @@ h2 {
   @extend %section;
   @extend %anchor;
   font-size: 1.35rem;
-  font-weight: 400;
 }
 
 h3 {
@@ -847,7 +847,6 @@ table {
 
 .post-content {
   line-height: 1.8;
-  font-size: 1rem;
   margin-top: 2rem;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -857,6 +856,9 @@ table {
     &:hover {
       @extend %link-hover;
     }
+  }
+  p {
+    font-size: 1.08rem;
   }
 }
 
@@ -889,6 +891,10 @@ table {
   border: 1px solid !important;
   padding: 0 3px 1px 3px;
   border-radius: 3px;
+  color: var(--link-color);
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 /* --- Effects classes --- */
@@ -982,10 +988,6 @@ table {
 
   #site-subtitle {
     @include ml-mr(1.8rem);
-  }
-
-  .post-content {
-    font-size: 1.08rem;
   }
 
   /* table text in small screens */
@@ -1285,6 +1287,10 @@ table {
       position: relative;
       right: 24.3%;
     }
+  }
+
+  .post-content p {
+    font-size: 1.05rem;
   }
 
   footer>div.d-felx {
